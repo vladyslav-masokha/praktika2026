@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package events;
+
+message OrderCreatedEvent {
+  int64 order_id = 1;
+  int64 user_id = 2;
+  double amount = 3;
+  string status = 4;
+  int64 sent_at_ms = 5;
+}
+
+message PaymentSuccessEvent {
+  int64 order_id = 1;
+  string transaction_id = 2;
+  int64 sent_at_ms = 3;
+}
+
+message PaymentFailedEvent {
+  int64 order_id = 1;
+  string reason = 2;
+  int64 sent_at_ms = 3;
+}
+
+message OrderConfirmedEvent {
+  int64 order_id = 1;
+  string status = 2;
+  int64 sent_at_ms = 3;
+}
+
+message BenchmarkEvent {
+  string event_id = 1;
+  int64 sequence = 2;
+  int64 sent_at_ms = 3;
+  string payload = 4;
+}

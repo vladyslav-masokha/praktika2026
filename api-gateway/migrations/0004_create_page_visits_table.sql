@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS page_visits (
+    id BIGSERIAL PRIMARY KEY,
+    page_key VARCHAR(255) NOT NULL,
+    user_id BIGINT NULL REFERENCES users(id) ON DELETE SET NULL,
+    session_id VARCHAR(255),
+    visited_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
