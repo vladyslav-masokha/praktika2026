@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply bg-[#030712] text-slate-100 antialiased;
+		font-feature-settings: 'ss01', 'ss03', 'cv01-cv11';
+	}
+
+	body {
+		@apply min-h-screen font-sans;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	@apply bg-[#030712];
+}
+::-webkit-scrollbar-thumb {
+	@apply bg-slate-800 rounded-full border-2 border-[#030712] hover:bg-slate-700;
+}
